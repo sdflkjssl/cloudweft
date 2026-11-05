@@ -1,0 +1,30 @@
+# 敏感凭据
+alist-admin-pass.txt
+quark-cookie.txt
+fp-idmap.json
+fp-idmap-*.json
+*.key
+*.pem
+
+# 运行数据
+data/
+logs/
+offline/
+offline-cache/
+*.log
+
+# macOS
+.DS_Store
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Windows build output
+windows/bin/
+windows/Plinth.Windows/*.exe
+
+# Xcode (工程由 xcodegen 生成: cd macos && xcodegen generate)
+DerivedData/
+xcuserdata/
+macos/Plinth.xcodeproj/

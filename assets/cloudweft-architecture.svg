@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 0 1200 380" role="img" aria-labelledby="t d">
+<title id="t">CloudWeft technical architecture</title>
+<desc id="d">AList storage backend provides CloudWeft on Linux, Windows and macOS through Rclone FUSE, Cloud Files API and File Provider.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#101827"/><stop offset="1" stop-color="#1b2d40"/>
+  </linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#74c7ec"/><stop offset="1" stop-color="#8cd9b4"/>
+  </linearGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feDropShadow dx="0" dy="10" stdDeviation="12" flood-opacity=".20"/>
+  </filter>
+</defs>
+<rect width="1200" height="380" fill="url(#bg)" rx="26"/>
+<circle cx="1110" cy="0" r="265" fill="#74c7ec" opacity=".035"/>
+<circle cx="295" cy="460" r="290" fill="#8cd9b4" opacity=".04"/>
+<g font-family="Inter,ui-sans-serif,system-ui,'Noto Sans CJK SC',sans-serif">
+  <text x="61" y="67" font-size="27" font-weight="750" fill="#f4f8ff">CloudWeft <tspan fill="#b1cbd7" font-weight="500">· Architecture</tspan></text>
+  <text x="62" y="97" font-size="15" fill="#a8c2ce">Native cloud files powered by AList</text>
+  <rect x="60" y="144" width="241" height="156" rx="19" fill="#203e50" stroke="#4e7489" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="180" y="189" font-size="23" font-weight="750" fill="#f5f8ff" text-anchor="middle">Cloud storage</text>
+  <text x="180" y="224" font-size="16" fill="#b7d6e4" text-anchor="middle">Quark · Baidu · WebDAV</text>
+  <text x="180" y="256" font-size="14" fill="#92afbd" text-anchor="middle">Provider authentication</text>
+  <path d="M301 222 H367" stroke="url(#accent)" stroke-width="3" stroke-dasharray="7 7"/>
+  <path d="M359 216 L367 222 L359 228" stroke="#8cd9b4" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="371" y="144" width="241" height="156" rx="19" fill="#203e50" stroke="#4e7489" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="491" y="196" font-size="30" font-weight="750" fill="#8cd9b4" text-anchor="middle">AList</text>
+  <text x="491" y="228" font-size="17" fill="#d0e4ed" text-anchor="middle">Storage drivers</text>
+  <text x="491" y="257" font-size="15" fill="#92afbd" text-anchor="middle">HTTP / WebDAV</text>
+  <path d="M612 222 H677" stroke="url(#accent)" stroke-width="3" stroke-dasharray="7 7"/>
+  <path d="M669 216 L677 222 L669 228" stroke="#8cd9b4" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="681" y="118" width="459" height="210" rx="19" fill="#203e50" stroke="#4e7489" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="910" y="151" font-size="23" font-weight="750" fill="#f5f8ff" text-anchor="middle">CloudWeft</text>
+  <rect x="701" y="166" width="419" height="43" rx="11" fill="#2b5061"/>
+  <text x="722" y="194" font-size="16" font-weight="700" fill="#8cd9b4">macOS</text>
+  <text x="838" y="194" font-size="15" fill="#dbeaf0">File Provider · Finder</text>
+  <rect x="701" y="216" width="419" height="43" rx="11" fill="#2b5061"/>
+  <text x="722" y="244" font-size="16" font-weight="700" fill="#8cd9b4">Windows</text>
+  <text x="838" y="244" font-size="15" fill="#dbeaf0">CFAPI · Explorer</text>
+  <rect x="701" y="266" width="419" height="43" rx="11" fill="#2b5061"/>
+  <text x="722" y="294" font-size="16" font-weight="700" fill="#8cd9b4">Linux</text>
+  <text x="838" y="294" font-size="15" fill="#dbeaf0">Rclone FUSE · Nautilus</text>
+</g>
+</svg>

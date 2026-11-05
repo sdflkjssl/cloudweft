@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: CloudWeft Linux guide / Linux 使用说明
+    url: https://github.com/sdflkjssl/cloudweft/blob/main/docs/linux.md
+    about: Installation and troubleshooting / 安装与排查

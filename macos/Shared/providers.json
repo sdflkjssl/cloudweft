@@ -1,0 +1,29 @@
+{
+  "bridgePort": 8081,
+  "providers": [
+    {
+      "id": "quark",
+      "displayName": "夸克",
+      "domainIdentifier": "plinth-drive",
+      "legacyDomainIdentifiers": ["plinth-drive2"],
+      "schemaVersion": 9,
+      "mountPath": "/quark",
+      "driver": "Quark",
+      "webdavPolicy": "native_proxy"
+    },
+    {
+      "id": "baidu",
+      "displayName": "百度网盘",
+      "domainIdentifier": "plinth-baidu",
+      "legacyDomainIdentifiers": [],
+      "schemaVersion": 7,
+      "mountPath": "/baidu",
+      "driver": "BaiduNetdisk",
+      "webdavPolicy": "native_proxy",
+      "downloadStrategy": "parallel_direct",
+      "downloadConcurrency": 8,
+      "downloadChunkSize": 8388608,
+      "downloadUserAgent": "pan.baidu.com"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 0 1200 380" role="img" aria-labelledby="title desc">
+<title id="title">CloudWeft — AList cloud files on your desktop</title>
+<desc id="desc">CloudWeft connects AList to Finder, Windows Explorer, and Nautilus with native desktop file workflows.</desc>
+<defs>
+  <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#101827"/><stop offset="1" stop-color="#1b2d40"/></linearGradient>
+  <linearGradient id="accent" x2="1" y2="1"><stop stop-color="#74c7ec"/><stop offset="1" stop-color="#8cd9b4"/></linearGradient>
+  <filter id="shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="14" flood-opacity=".25"/></filter>
+</defs>
+<rect width="1200" height="380" rx="26" fill="url(#bg)"/>
+<circle cx="1030" cy="-68" r="260" fill="#74c7ec" opacity=".035"/>
+<circle cx="350" cy="430" r="280" fill="#8cd9b4" opacity=".03"/>
+<g transform="translate(65 75)">
+<rect x="0" y="0" width="66" height="66" rx="17" fill="url(#accent)" opacity=".97"/>
+<g fill="none" stroke="#17344a" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.5">
+<path d="M14 25 33 14 52 25v22L33 58 14 47Z"/>
+<path d="M14 25 33 36 52 25M33 36v22"/>
+</g>
+<text x="0" y="129" font-family="Inter, ui-sans-serif, sans-serif" font-size="67" font-weight="750" fill="#f5f8ff" letter-spacing="-2.5">CloudWeft</text>
+<text x="2" y="172" font-family="Inter, ui-sans-serif, sans-serif" font-size="23" fill="#c6d5e1">AList cloud storage, in your file manager.</text>
+<g transform="translate(1 208)">
+<rect width="157" height="34" rx="17" fill="#263d50" stroke="#446276"/>
+<text x="78" y="23" fill="#badced" font-family="Inter, sans-serif" font-weight="600" font-size="14" text-anchor="middle">Open source</text>
+<rect x="170" width="141" height="34" rx="17" fill="#263d50" stroke="#446276"/>
+<text x="240" y="23" fill="#badced" font-family="Inter, sans-serif" font-weight="600" font-size="14" text-anchor="middle">MIT License</text>
+</g>
+</g>
+<path d="M645 190H731" stroke="#6998ad" stroke-width="3" stroke-dasharray="7 8" opacity=".9"/>
+<g filter="url(#shadow)">
+<rect x="731" y="116" width="144" height="148" rx="22" fill="#203e50" stroke="#4e7489" stroke-width="1.5"/>
+<path d="M788 175a22 22 0 0 1 39-10c14-1 23 7 23 20 0 11-8 19-21 19h-41c-13 0-21-9-21-19 0-8 7-15 21-10Z" fill="none" stroke="#8cd9b4" stroke-width="5" stroke-linejoin="round"/>
+<text x="803" y="237" text-anchor="middle" fill="#f5f8ff" font-family="Inter, sans-serif" font-size="22" font-weight="700">AList</text>
+</g>
+<path d="M875 190H923M923 190V81M923 190V297M923 81H964M923 190H964M923 297H964" fill="none" stroke="#6998ad" stroke-width="3" stroke-linecap="round" opacity=".9"/>
+<g font-family="Inter, sans-serif" font-size="19" font-weight="700" fill="#ebf6ff">
+<rect x="964" y="47" width="182" height="69" rx="15" fill="#284156" stroke="#54708a"/>
+<circle cx="992" cy="81" r="10" fill="#8cd9b4"/>
+<path d="M987 81 991 85 998 77" fill="none" stroke="#1b3f39" stroke-width="2.5" stroke-linecap="round"/>
+<text x="1013" y="88">Finder</text>
+<rect x="964" y="156" width="182" height="69" rx="15" fill="#284156" stroke="#54708a"/>
+<circle cx="992" cy="190" r="10" fill="#8cd9b4"/>
+<path d="M987 190 991 194 998 186" fill="none" stroke="#1b3f39" stroke-width="2.5" stroke-linecap="round"/>
+<text x="1013" y="197">Explorer</text>
+<rect x="964" y="263" width="182" height="69" rx="15" fill="#284156" stroke="#54708a"/>
+<circle cx="992" cy="297" r="10" fill="#8cd9b4"/>
+<path d="M987 297 991 301 998 293" fill="none" stroke="#1b3f39" stroke-width="2.5" stroke-linecap="round"/>
+<text x="1013" y="304">Nautilus</text>
+</g>
+</svg>

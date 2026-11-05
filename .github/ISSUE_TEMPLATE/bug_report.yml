@@ -1,0 +1,45 @@
+name: Bug report / 问题反馈
+description: Report a reproducible CloudWeft issue
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please remove all credentials, account IDs, tokens, private URLs and personal file paths from logs. 请勿上传敏感信息。
+  - type: dropdown
+    id: system
+    attributes:
+      label: Operating system / 系统
+      options:
+        - Ubuntu / GNOME
+        - Other Linux
+        - Windows
+        - macOS
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Versions / 版本
+      description: OS, desktop environment, Nautilus / Explorer / Finder, Rclone and AList version where applicable
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps / 复现步骤
+      description: What did you do and what happened?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior / 预期行为
+    validations:
+      required: true
+  - type: textarea
+    id: sanitized_logs
+    attributes:
+      label: Redacted logs / 脱敏日志（可选）
+      render: shell

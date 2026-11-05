@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="690" height="38" viewBox="0 0 690 38" role="img" aria-label="Linux GNOME, Windows Cloud Files API, macOS File Provider, MIT Open Source">
+ <title>CloudWeft supported platforms and license</title>
+ <g font-family="Inter,ui-sans-serif,Arial,sans-serif" font-size="15" font-weight="600">
+  <rect x="0" width="166" height="38" rx="9" fill="#243d50"/>
+  <text x="83" y="25" text-anchor="middle" fill="#e8f7ff">Linux · GNOME</text>
+  <rect x="175" width="218" height="38" rx="9" fill="#243d50"/>
+  <text x="284" y="25" text-anchor="middle" fill="#e8f7ff">Windows · CFAPI</text>
+  <rect x="402" width="211" height="38" rx="9" fill="#243d50"/>
+  <text x="507" y="25" text-anchor="middle" fill="#e8f7ff">macOS · Finder</text>
+  <rect x="622" width="68" height="38" rx="9" fill="#1e6c62"/>
+  <text x="656" y="25" text-anchor="middle" fill="#f3fffb">MIT</text>
+ </g>
+</svg>

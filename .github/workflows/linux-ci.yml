@@ -1,0 +1,33 @@
+name: Linux checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  linux:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install test runtime (Rclone)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq rclone
+      - name: Linux unit tests
+        run: python3 -m unittest discover -s linux/tests -p 'test_*.py' -v
+      - name: Installer syntax
+        run: bash -n linux/install.sh && bash -n scripts/install-macos.sh
+      - name: Python syntax
+        run: python3 -m compileall -q linux
+      - name: Verify promotional assets
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from xml.etree import ElementTree
+          for image in Path('assets').glob('*.svg'):
+              ElementTree.parse(image)
+          assert Path('docs/LINUX_DO_BETA.md').is_file()
+          PY

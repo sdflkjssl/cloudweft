@@ -1,0 +1,7 @@
+CloudWeft's Linux Nautilus emblems reuse the graphical assets from
+Wusel (https://github.com/itbh-at/wusel), developed by IT Beratung Hermann GmbH.
+Those emblem SVGs are licensed under the Apache License, Version 2.0.
+The full license text is included in APACHE-2.0.txt.
+
+The integration code (cloudweft_nautilus.py) is authored for CloudWeft and
+uses python3-nautilus / libnautilus-extension interfaces provided by GNOME.
