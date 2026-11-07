@@ -171,6 +171,61 @@ enum DriveDomain {
         })
     }
 
+    /// Ask File Provider to refresh an existing domain without re-registering it.
+    /// Paths are relative to the selected provider's own root; identifiers are
+    /// resolved by File Provider so this remains compatible with old domains.
+    @MainActor
+    static func refresh(_ provider: DriveProvider, folders: [String]) async -> Bool {
+        guard let manager = NSFileProviderManager(for: domain(provider)) else {
+            NSLog("[cloudweft] no File Provider manager for \(provider.id)")
+            return false
+        }
+
+        var allSucceeded = true
+        do {
+            try await manager.signalEnumerator(for: .rootContainer)
+            NSLog("[cloudweft] refreshed \(provider.id) root")
+        } catch {
+            NSLog("[cloudweft] could not refresh \(provider.id) root: \(error.localizedDescription)")
+            allSucceeded = false
+        }
+
+        guard !folders.isEmpty else { return allSucceeded }
+        let root: URL
+        do {
+            root = try await manager.getUserVisibleURL(for: .rootContainer)
+        } catch {
+            NSLog("[cloudweft] cannot resolve \(provider.id) root: \(error.localizedDescription)")
+            return false
+        }
+
+        for relativePath in folders {
+            let components = relativePath.split(separator: "/", omittingEmptySubsequences: false)
+            guard !components.isEmpty,
+                  components.allSatisfy({ !$0.isEmpty && $0 != "." && $0 != ".." }) else {
+                NSLog("[cloudweft] invalid relative folder: \(relativePath)")
+                allSucceeded = false
+                continue
+            }
+
+            let folderURL = components.reduce(root) { $0.appendingPathComponent(String($1), isDirectory: true) }
+            do {
+                let (identifier, resolvedDomain) = try await NSFileProviderManager.identifierForUserVisibleFile(at: folderURL)
+                guard resolvedDomain == provider.domainID else {
+                    NSLog("[cloudweft] rejected cross-provider folder: \(relativePath)")
+                    allSucceeded = false
+                    continue
+                }
+                try await manager.signalEnumerator(for: identifier)
+                NSLog("[cloudweft] refreshed \(provider.id): \(relativePath)")
+            } catch {
+                NSLog("[cloudweft] refresh failed \(provider.id)/\(relativePath): \(error.localizedDescription)")
+                allSucceeded = false
+            }
+        }
+        return allSucceeded
+    }
+
     static func revealInFinder(_ provider: DriveProvider) async {
         let target = domain(provider)
         guard let manager = NSFileProviderManager(for: target),

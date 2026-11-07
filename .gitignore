@@ -28,3 +28,4 @@ windows/Plinth.Windows/*.exe
 DerivedData/
 xcuserdata/
 macos/Plinth.xcodeproj/
+macos/CloudWeft.xcodeproj/

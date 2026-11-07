@@ -34,4 +34,12 @@ The File Provider implementation builds on [plinth](https://github.com/ytomasch/
 bash scripts/plinth-doctor.sh
 ```
 
+Refresh an existing File Provider domain without removing or re-registering it:
+
+```bash
+/Applications/Plinth.app/Contents/MacOS/Plinth --refresh-cloud quark
+```
+
+Additional directory arguments can target existing folders relative to the chosen storage root. For example, `--refresh-cloud quark Documents Projects` signals those folders after refreshing the root. Use the provider IDs from `macos/Shared/providers.json`. The `Plinth.app` executable and bundle identifiers are retained for compatibility, while the displayed product name is CloudWeft.
+
 This diagnostic filename is retained for compatibility. A healthy setup should show AList, bridge and registered File Provider domains. For troubleshooting, check the local bridge logs, AList admin UI and Finder extension permission before reinstalling or deleting any cached cloud data.

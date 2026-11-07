@@ -1,4 +1,5 @@
 import AppKit
+import Darwin
 import Foundation
 
 @MainActor
@@ -202,6 +203,24 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 struct PlinthMain {
     @MainActor
     static func main() {
+        let args = CommandLine.arguments
+        if args.dropFirst().first == "--refresh-cloud" {
+            guard args.count >= 3,
+                  let provider = ProviderCatalog.provider(id: args[2]) else {
+                fputs("Usage: Plinth --refresh-cloud <provider-id> [relative-folder ...]\n", stderr)
+                Darwin.exit(2)
+            }
+            let app = NSApplication.shared
+            app.setActivationPolicy(.prohibited)
+            Task { @MainActor in
+                let succeeded = await DriveDomain.refresh(
+                    provider, folders: Array(args.dropFirst(3)))
+                Darwin.exit(succeeded ? 0 : 1)
+            }
+            app.run()
+            return
+        }
+
         let app = NSApplication.shared
         let delegate = AppDelegate()
         app.delegate = delegate

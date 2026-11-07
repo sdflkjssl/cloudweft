@@ -14,7 +14,7 @@
 #   3. com.apple.security.application-groups in BOTH .entitlements files
 #   4. NSExtensionFileProviderDocumentGroup in the extension's Info.plist
 #      and Credentials.appGroup in the Swift source
-name: Plinth
+name: CloudWeft
 
 options:
   bundleIdPrefix: com.quarkpan

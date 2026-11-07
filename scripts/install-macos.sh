@@ -43,7 +43,7 @@ else
   printf '[1/5] Node.js already available: %s\n' "$(command -v node)"
 fi
 
-printf '[2/5] Installing AList and Cloud Drive FP background services…\n'
+printf '[2/5] Installing AList and CloudWeft background services…\n'
 bash "$ROOT/scripts/install-services.sh"
 
 printf '[3/5] Building CloudWeft and its File Provider extension…\n'
