@@ -55,3 +55,7 @@ Linux unit tests: `python3 -m unittest discover -s linux/tests -p 'test_*.py'`. 
 ## License and attribution
 
 CloudWeft is MIT-licensed. The macOS File Provider implementation includes MIT-licensed code from [plinth](https://github.com/ytomasch/plinth). AList, Rclone and Wusel retain their respective licenses; see [third-party notices](docs/third-party-notices.en.md). Windows sync-root identities and macOS File Provider identifiers are preserved for installation compatibility.
+
+## Friendly Links
+
+[Community](https://linux.do/)

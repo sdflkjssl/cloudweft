@@ -6,7 +6,7 @@
 
 **CloudWeft 是跨平台开源云文件管理工具，完整覆盖 Windows、macOS 和 Linux。** 通过 AList 将夸克、百度等网盘直接接入系统原生文件管理器，支持按需读取文件并将本地修改写回云端。
 
-[English](README.en.md) · [Windows 安装](docs/windows.md) · [macOS 安装](docs/macos.md) · [Linux 安装](docs/linux.md) · [Linux Do 发布文案](docs/LINUX_DO_BETA.md)
+[English](README.en.md) · [Windows 安装](docs/windows.md) · [macOS 安装](docs/macos.md) · [Linux 安装](docs/linux.md)
 
 </div>
 
@@ -57,3 +57,7 @@ Linux 单元测试：`python3 -m unittest discover -s linux/tests -p 'test_*.py'
 ## 许可证与来源
 
 CloudWeft 主体采用 [MIT](LICENSE) 许可证。macOS File Provider 含基于 [plinth](https://github.com/ytomasch/plinth) 的 MIT 代码；AList、Rclone 和 Wusel 等分别遵循其许可证。依赖来源见 [第三方组件声明](docs/third-party-notices.md) 和 [Wusel 图标许可证](linux/nautilus/APACHE-2.0.txt)。为兼容既有安装，Windows 同步根目录与 macOS File Provider 标识保留原值。
+
+## 友情链接
+
+[技术社区](https://linux.do/)
