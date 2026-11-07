@@ -58,4 +58,4 @@ CloudWeft is MIT-licensed. The macOS File Provider implementation includes MIT-l
 
 ## Friendly Links
 
-[Community](https://linux.do/)
+[LINUX DO](https://linux.do/)

@@ -60,4 +60,4 @@ CloudWeft 主体采用 [MIT](LICENSE) 许可证。macOS File Provider 含基于 
 
 ## 友情链接
 
-[技术社区](https://linux.do/)
+[LINUX DO](https://linux.do/)
