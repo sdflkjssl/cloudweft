@@ -72,6 +72,7 @@ class Storage:
     display: str
     mount: str
     status: str
+    driver: str = ""
 
     @staticmethod
     def from_alist(item: dict) -> "Storage":
@@ -86,7 +87,7 @@ class Storage:
         display = "".join(c if c.isprintable() else "_" for c in display)
         display = display.strip(" .") or ("storage-" + str(storage_id))
         return Storage("s" + str(storage_id), display, mount,
-                       str(item.get("status") or ""))
+                       str(item.get("status") or ""), str(item.get("driver") or ""))
 
 
 def storage_available(item: dict, password: str) -> bool:
@@ -232,6 +233,9 @@ class Supervisor:
             "--transfers", "8", "--umask", "027",
             "--log-level", "INFO"
         ]
+        # Baidu Netdisk requires its desktop User-Agent for large-file downloads.
+        # Apply only to this storage; other WebDAV backends retain Rclone's default.
+        args.extend(self.driver_http_args(store))
         try:
             proc = subprocess.Popen(args, stdout=log, stderr=subprocess.STDOUT)
         except Exception:
@@ -242,8 +246,12 @@ class Supervisor:
         LOG.info("Mounted %s (%s) at %s [pid=%d]", store.display, store.sid, root, proc.pid)
 
     @staticmethod
+    def driver_http_args(store: Storage) -> list[str]:
+        return ["--user-agent", "pan.baidu.com"] if store.driver == "BaiduNetdisk" else []
+
+    @staticmethod
     def desired_config(store: Storage, password: str) -> str:
-        return hashlib.sha256((remote_url(store) + "\\0" + password).encode()).hexdigest()
+        return hashlib.sha256((remote_url(store) + "\\0" + password + "\\0" + store.driver).encode()).hexdigest()
 
     def reconcile(self):
         records = alist_api()

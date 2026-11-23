@@ -18,6 +18,17 @@ class LinuxCloudWeftTest(unittest.TestCase):
         self.assertEqual(one.display, "百度网盘")
         self.assertEqual(one.mount, "/baidu")
 
+    def test_baidu_download_agent_only_for_baidu_storage(self):
+        baidu = cloudweft.Storage.from_alist(
+            {"id": 1, "mount_path": "/baidu", "driver": "BaiduNetdisk", "status": "work"})
+        quark = cloudweft.Storage.from_alist(
+            {"id": 2, "mount_path": "/quark", "driver": "Quark", "status": "work"})
+        self.assertEqual(cloudweft.Supervisor.driver_http_args(baidu),
+                         ["--user-agent", "pan.baidu.com"])
+        self.assertEqual(cloudweft.Supervisor.driver_http_args(quark), [])
+        self.assertNotEqual(cloudweft.Supervisor.desired_config(baidu, "password"),
+                            cloudweft.Supervisor.desired_config(quark, "password"))
+
     def test_same_name_separate_storage_ids(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp) / "CloudWeft"
